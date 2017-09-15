@@ -14,17 +14,17 @@ public class table_put_sample4 {
         Connection connection = ConnectionFactory.createConnection(conf);
         BufferedMutator table = connection.getBufferedMutator(TableName.valueOf(constants.TABLE_NAME));
 
-        List<Mutation> batch = new ArrayList<>();
+        List<Mutation> puts = new ArrayList<>();
         for(int i = 0; i < 3; i++) {
             Put put = new Put(random.getRowKey());
             put.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes(), random.getName());
             put.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "sex".getBytes(), random.getSex());
             put.addColumn(constants.COLUMN_FAMILY_EX.getBytes(), "height".getBytes(), random.getHeight());
             put.addColumn(constants.COLUMN_FAMILY_EX.getBytes(), "weight".getBytes(), random.getWeight());
-            batch.add(put);
+            puts.add(put);
         }
 
-        table.mutate(batch);
+        table.mutate(puts);
         table.flush();
         table.close();
         connection.close();
