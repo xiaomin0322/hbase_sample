@@ -11,7 +11,6 @@ public class table_scan_sample1 {
         Table table = connection.getTable(TableName.valueOf(constants.TABLE_NAME));
 
         Scan scan = new Scan();
-//        scan.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes());
 
         ResultScanner rs = table.getScanner(scan);
         for (Result r = rs.next(); r != null; r = rs.next()) {
