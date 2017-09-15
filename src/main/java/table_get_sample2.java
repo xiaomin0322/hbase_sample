@@ -16,5 +16,8 @@ public class table_get_sample2 {
         Result result = table.get(get);
         byte[] name = result.getValue(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes());
         System.out.print("[------]name=" + new String(name) + "\n");
+
+        table.close();
+        connection.close();
     }
 }

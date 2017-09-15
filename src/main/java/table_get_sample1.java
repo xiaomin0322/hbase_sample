@@ -17,5 +17,8 @@ public class table_get_sample1 {
         byte[] weight = result.getValue(constants.COLUMN_FAMILY_EX.getBytes(), "weight".getBytes());
         System.out.print("[------]name=" + new String(name) + "\n");
         System.out.print("[------]name=" + new String(weight) + "\n");
+
+        table.close();
+        connection.close();
     }
 }

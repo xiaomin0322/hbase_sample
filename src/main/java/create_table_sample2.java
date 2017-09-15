@@ -43,5 +43,7 @@ public class create_table_sample2 {
         };
 
         admin.createTable(desc, splitKeys);
+        admin.close();
+        connection.close();
     }
 }

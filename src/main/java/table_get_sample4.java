@@ -38,5 +38,8 @@ public class table_get_sample4 {
             System.out.print("[------]height=" + new String(height) + "\n");
             System.out.print("[------]weight=" + new String(weight) + "\n");
         }
+
+        table.close();
+        connection.close();
     }
 }

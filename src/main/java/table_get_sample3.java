@@ -26,5 +26,8 @@ public class table_get_sample3 {
         System.out.print("[------]sex=" + new String(sex) + "\n");
         System.out.print("[------]height=" + new String(height) + "\n");
         System.out.print("[------]weight=" + new String(weight) + "\n");
+
+        table.close();
+        connection.close();
     }
 }

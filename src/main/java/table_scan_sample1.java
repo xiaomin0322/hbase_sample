@@ -23,5 +23,8 @@ public class table_scan_sample1 {
             System.out.print("[------]name=" + new String(weight) + "\n");
 
         }
+
+        table.close();
+        connection.close();
     }
 }

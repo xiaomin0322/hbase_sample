@@ -20,5 +20,8 @@ public class table_scan_sample2 {
             System.out.print("[------]row_key=" + new String(row_key) + "\n");
             System.out.print("[------]name=" + new String(name) + "\n");
         }
+
+        table.close();
+        connection.close();
     }
 }

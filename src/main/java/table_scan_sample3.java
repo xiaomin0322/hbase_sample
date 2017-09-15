@@ -23,5 +23,8 @@ public class table_scan_sample3 {
             byte[] weight = r.getValue(constants.COLUMN_FAMILY_EX.getBytes(), "weight".getBytes());
             System.out.print("[------]weight=" + new String(weight) + "\n");
         }
+
+        table.close();
+        connection.close();
     }
 }

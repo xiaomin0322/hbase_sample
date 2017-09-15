@@ -26,5 +26,7 @@ public class create_table_sample1 {
         desc.addFamily(family2);
 
         admin.createTable(desc);
+        admin.close();
+        connection.close();
     }
 }
