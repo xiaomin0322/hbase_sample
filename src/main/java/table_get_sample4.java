@@ -15,10 +15,8 @@ public class table_get_sample4 {
 
         List<Get> gets = new ArrayList<>();
         Get get1 = new Get(("row01").getBytes());
-        get1.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes());
-        get1.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "sex".getBytes());
-        get1.addColumn(constants.COLUMN_FAMILY_EX.getBytes(), "height".getBytes());
-        get1.addColumn(constants.COLUMN_FAMILY_EX.getBytes(), "weight".getBytes());
+        get1.addFamily(constants.COLUMN_FAMILY_DF.getBytes());
+        get1.addFamily(constants.COLUMN_FAMILY_EX.getBytes());
         gets.add(get1);
         Get get2 = new Get(("row02").getBytes());
         get2.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes());
