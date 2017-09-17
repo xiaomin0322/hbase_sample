@@ -1,3 +1,5 @@
+package api;
+
 import org.apache.hadoop.hbase.util.Bytes;
 
 import java.util.Random;
