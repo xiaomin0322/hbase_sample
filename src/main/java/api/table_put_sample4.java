@@ -16,7 +16,7 @@ public class table_put_sample4 {
         Connection connection = ConnectionFactory.createConnection(conf);
         BufferedMutator table = connection.getBufferedMutator(TableName.valueOf(constants.TABLE_NAME));
 
-        List<Mutation> puts = new ArrayList<>();
+        List<Put> puts = new ArrayList<>();
         for(int i = 0; i < 3; i++) {
             Put put = new Put(random.getRowKey());
             put.addColumn(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes(), random.getName());
