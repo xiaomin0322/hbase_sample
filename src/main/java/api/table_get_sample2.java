@@ -12,12 +12,18 @@ public class table_get_sample2 {
         Connection connection = ConnectionFactory.createConnection(conf);
         Table table = connection.getTable(TableName.valueOf(constants.TABLE_NAME));
 
-        Get get = new Get(("row01").getBytes());
-        get.addFamily(constants.COLUMN_FAMILY_DF.getBytes());
+        Get get = new Get(("row06").getBytes());
+       // get.addFamily(constants.COLUMN_FAMILY_DF.getBytes());
 
         Result result = table.get(get);
         byte[] name = result.getValue(constants.COLUMN_FAMILY_DF.getBytes(), "name".getBytes());
-        System.out.print("[------]name=" + new String(name) + "\n");
+        if(name!=null) {
+        	System.out.print("[------]name=" + new String(name) + "\n");
+        }
+        name = result.getValue(constants.COLUMN_FAMILY_EX.getBytes(), "height".getBytes());
+        if(name!=null) {
+        	System.out.print("[------]height=" + new String(name) + "\n");
+        }
 
         table.close();
         connection.close();
