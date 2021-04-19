@@ -11,7 +11,7 @@ import java.util.List;
 public class table_put_sample4 {
     public static void main(String[] args) throws Exception {
         Configuration conf = HBaseConfiguration.create();
-        conf.set("hbase.zookeeper.quorum", "192.168.1.80,192.168.1.81,192.168.1.82");
+        conf.set("hbase.zookeeper.quorum", "udp01,udp02,udp03");
         conf.set("hbase.client.write.buffer", "1048576");//1M
         Connection connection = ConnectionFactory.createConnection(conf);
         BufferedMutator table = connection.getBufferedMutator(TableName.valueOf(constants.TABLE_NAME));

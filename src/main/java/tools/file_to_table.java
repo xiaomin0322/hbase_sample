@@ -81,7 +81,7 @@ public class file_to_table {
 
     private static void toHBase(BufferedReader br, String table_name) throws Exception {
         Configuration conf = HBaseConfiguration.create();
-        conf.set("hbase.zookeeper.quorum", "192.168.1.80,192.168.1.81,192.168.1.82");
+        conf.set("hbase.zookeeper.quorum", "udp01,udp02,udp03");
         conf.set("hbase.client.write.buffer", "1048576");//1M
         connection = ConnectionFactory.createConnection(conf);
         table = connection.getBufferedMutator(TableName.valueOf(table_name));

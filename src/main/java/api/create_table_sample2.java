@@ -13,7 +13,7 @@ import org.apache.hadoop.hbase.util.Bytes;
 public class create_table_sample2 {
     public static void main(String[] args) throws Exception {
         Configuration conf = HBaseConfiguration.create();
-        conf.set("hbase.zookeeper.quorum", "192.168.1.80,192.168.1.81,192.168.1.82");
+        conf.set("hbase.zookeeper.quorum", "udp01,udp02,udp03");
         Connection connection = ConnectionFactory.createConnection(conf);
         Admin admin = connection.getAdmin();
 
